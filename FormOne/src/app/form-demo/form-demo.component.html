@@ -6,7 +6,7 @@
 
    <div class="form-group">
      <label for="skuInput">SKU</label>
-     <input type="text"
+     <input type="color"
            id="skuInput"
            placeholder="SKU"
            name="sku"
@@ -14,20 +14,20 @@
            class="form-control">
    </div>
    <div class="form-group">
-     <label for="skuInput">Anastasia</label>
+     <label for="anaInput">Anastasia</label>
      <input type="text"
-           id="skuInput"
-           placeholder="SKU"
-           name="sku"
+           id="anaInput"
+           placeholder="ANA"
+           name="ana"
            [formControl]="myForm.controls['ana']"
            class="form-control">
    </div>
    <div class="form-group">
-     <label for="skuInput">Dio</label>
-     <input type="text"
-           id="skuInput"
-           placeholder="SKU"
-           name="sku"
+     <label for="dioInput">Dio</label>
+     <input type="date"
+           id="dioInput"
+           placeholder="DIO"
+           name="dio"
            [formControl]="myForm.controls['dio']"
            class="form-control">
    </div>
@@ -38,6 +38,20 @@
    <div *ngIf="myForm.controls['sku'].hasError('required')"
          class="alert alert-danger">SKU is required
    </div>
+
+   <div *ngIf="!myForm.controls['ana'].valid"
+         class="alert alert-danger">SKU is invalid
+   </div>
+   <div *ngIf="myForm.controls['ana'].hasError('required')"
+         class="alert alert-danger">SKU is required
+   </div>
+
+   <div *ngIf="!myForm.controls['dio'].valid"
+         class="alert alert-danger">SKU is invalid
+   </div>
+   <div *ngIf="myForm.controls['dio'].hasError('required')"
+         class="alert alert-danger">SKU is required
+   </div>
    <button type="submit" class="btn btn-primary">Submit</button>
 
 
@@ -46,3 +60,10 @@
  <div *ngIf="!myForm.valid"
  class="alert alert-danger">Form is invalid</div>
 </div>
+
+<div *ngIf="false"></div> <!-- never displayed -->
+<div *ngIf="a > b"></div> <!-- displayed if a is more than b -->
+<div *ngIf="str == 'yes'"></div> <!-- displayed if str is the string "yes" -->
+<div *ngIf="myFunc()"></div> <!-- displayed if myFunc returns truthy -->
+
+
